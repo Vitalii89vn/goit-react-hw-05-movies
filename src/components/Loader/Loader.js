@@ -1,15 +1,15 @@
-import { RotatingLines } from 'react-loader-spinner';
+import { TailSpin } from 'react-loader-spinner';
 import css from './Loader.module.css'
 
 export const Loader = () => {
     return (
         <div className={css.Loader}>
-            <h2>Loading images....</h2>
-            <RotatingLines
-                strokeColor="red"
-                strokeWidth="5"
-                animationDuration="1"
-                width="96"
+            <TailSpin
+                height="100"
+                width="100"
+                color="#4fa94d"
+                ariaLabel="tail-spin-loading"
+                radius="1"
                 visible={true}
             />
         </div>
