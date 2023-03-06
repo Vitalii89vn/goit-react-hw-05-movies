@@ -6,7 +6,11 @@ import { Loader } from "components/Loader/Loader";
 import { Button } from "components/Button/Button";
 import { Route, Routes } from 'react-router-dom';
 import { Home } from "pages/Home/Home";
+import { Movies } from "pages/Movies/Movies";
 import { MovieDetails } from "pages/MovieDetails/MovieDetails";
+import { TrendingMovies } from "components/TrendingMovies/TrendingMovies";
+import { Layout } from "components/Layout/Layout";
+
 
 // export const App =()=> {
 //   const [searchQuery, setSearchQuery] = useState('');
@@ -76,16 +80,23 @@ export const App = () => {
   return (
     <Routes>
       <Route path='/' element={<Home />}>
-        <Route path='movies/:moveiId' element={<MovieDetails />}></Route>
-                {/* <Route index element={<Layout />} />
-                <Route path='movies' element={<Movies />} />
-                <Route path='movies/:moveiId' element={<MovieDetails />}>
+        {/* <Route index element={<Layout />} /> */}
+      </Route>
+        <Route path='/movies' element={<Movies />} />
+        <Route path='/movies/:id' element={<MovieDetails />} />
+       
+      
+          
+        {/* </Route> */}
+        {/* <Route path='/movies/:id' element={<MovieDetails />}/> */}
+        {/* 
+                
                     <Route path='cast' element={<Cast />} />
                     <Route path='reviews' element={ <Reviews/>} />
                 </Route> */}
-                <Route path='*' element={ <Home/>} />
-            </Route>
-        </Routes>
+        <Route path='*' element={<Home />} />
+      
+    </Routes>
   )
-}
+};
  

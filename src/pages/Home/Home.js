@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import * as FetchTMDB from "utils/FetchTMDB";
 import { TrendingMovies } from "components/TrendingMovies/TrendingMovies";
 import { toast } from "react-hot-toast";
+import { Layout } from "components/Layout/Layout";
+import { Outlet } from "react-router-dom";
 
 export const Home = () => {
     const [trendingMovies, setTrendingMovies] = useState([])
@@ -12,14 +14,17 @@ export const Home = () => {
             .then(m => {if (m.results !== []) {
                 setTrendingMovies([...m.results])
             }
-                else {toast('egccccc')}
+                else {toast.error('egccccc')}
             } );
-                // console.log(movie)
-            
+                
     }, [])
 
     return (
-        
-        < TrendingMovies movies = { trendingMovies } />
+        <div>
+            <Layout/>
+            < TrendingMovies movies={trendingMovies} /> 
+            <Outlet/>
+        </div>
+     
     )
 }
