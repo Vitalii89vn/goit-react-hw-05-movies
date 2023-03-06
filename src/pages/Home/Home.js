@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import * as FetchTMDB from "utils/FetchTMDB";
 import { TrendingMovies } from "components/TrendingMovies/TrendingMovies";
@@ -11,20 +10,20 @@ export const Home = () => {
 
     useEffect(() => {
         FetchTMDB.getTrendingToday()
-            .then(m => {if (m.results !== []) {
-                setTrendingMovies([...m.results])
-            }
-                else {toast.error('egccccc')}
-            } );
-                
+            .then(m => {
+                if (m.results !== []) {
+                    setTrendingMovies([...m.results])
+                }
+                else { toast.error('OOPs') }
+            });
     }, [])
 
     return (
         <div>
-            <Layout/>
-            < TrendingMovies movies={trendingMovies} /> 
-            <Outlet/>
+            <Layout />
+            < TrendingMovies movies={trendingMovies} />
+            <Outlet />
         </div>
      
     )
-}
+};

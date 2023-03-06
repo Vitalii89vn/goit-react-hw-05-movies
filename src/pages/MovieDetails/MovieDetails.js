@@ -1,35 +1,27 @@
 import { useState, useEffect} from "react";
 import * as FetchTMDB from "utils/FetchTMDB";
-import {useParams } from 'react-router-dom'
-import { format } from 'date-fns'
-import {FilmCard} from 'components/FilmCard/FilmCard'
+import { useParams,Link, useLocation } from 'react-router-dom';
+import { FilmCard } from 'components/FilmCard/FilmCard';
+import { toast } from "react-hot-toast";
+import { AiOutlineArrowLeft } from "react-icons/ai";
+import { Layout } from "components/Layout/Layout";
 
 export const MovieDetails = () => {
-    const [movie, setMovie] = useState({})
-
+    const [movie, setMovie] = useState(null)
+    const location = useLocation();
     const { id } = useParams();
 
     useEffect(() => {
         FetchTMDB.getFullInfoAboutMovie(id)
             .then(setMovie)
-            .catch(() => { throw new Error('ergggg') })
+            .catch(toast.error('Oops, something wrong'))
     }, [id])
-    // console.log(movie)
     
-    // const API_KEY = 'c28a60c35f7c1f6eafdc45cc0b774d29';
-    // const poster = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&poster_path=${movie.poster_path}`
-    // // const year = format(Date.parse(movie.release_date), 'yyyy')
     return (
-        
-        <FilmCard film={movie} />
-    //    movie !== {} &&
-    //     (<div>
-    //         <img src={poster} alt={movie.title} />
-    //         <h2>{movie.title}
-    //             ({format(Date.parse(movie.release_date), 'yyyy')})
-    //         </h2>
-
-    //     </div>)
-    )
+        <>
+            <Layout />
+        <Link to={location.state?.from ?? `/movies`}> <AiOutlineArrowLeft/>Go back </Link>
+           {movie && (<FilmCard film={movie} />)} 
+        </>
+        )
 }
-// flatpickr.dateFormat:"YYYY"
