@@ -20,8 +20,8 @@ export const MovieDetails = () => {
     return (
         <>
             <Layout />
-        <Link to={location.state?.from ?? `/movies`}> <AiOutlineArrowLeft/>Go back </Link>
-           {movie && (<FilmCard film={movie} />)} 
+            <Link to={location.state?.from ?? `/movies`}> <AiOutlineArrowLeft /> Go back </Link>
+            {movie && (<FilmCard film={movie} />)}
         </>
-        )
+    )
 }

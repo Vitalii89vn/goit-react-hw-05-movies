@@ -18,10 +18,7 @@ export const Cast = () => {
     return (
         <div>
          
-            {filmCast &&
-                (!filmCast.cast.name ? 
-                <p>We don't have info from cast for this movie</p> :
-                <CastCard filmCast={filmCast } />)}
+            {filmCast && <CastCard filmCast={filmCast } />}
           </div>
         )
 }

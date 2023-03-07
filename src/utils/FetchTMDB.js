@@ -27,3 +27,5 @@ export async function getReviewsFromMovie(movieId) {
     const response = await axios.get(`movie/${movieId}/reviews?api_key=${API_KEY}`)
     return response.data
 };
+
+// https://api.themoviedb.org/3/movie/411/?api_key=c28a60c35f7c1f6eafdc45cc0b774d29&poster_path=iREd0rNCjYdf5Ar0vfaW32yrkm.jpg
