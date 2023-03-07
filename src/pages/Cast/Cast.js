@@ -14,11 +14,15 @@ export const Cast = () => {
             .then(setFilmCast)
             .catch(toast.error('Oops, something wrong'))
     }, [id])
-    
+
     return (
         <div>
-         
-            {filmCast && <CastCard filmCast={filmCast } />}
-          </div>
-        )
-}
+        
+            {filmCast &&
+                (filmCast.cast.length === 0 ?
+                <p>We don't have any info about actors for this movie</p> :
+                <CastCard filmCast={filmCast} />
+            )}
+        </div>
+    )
+};
