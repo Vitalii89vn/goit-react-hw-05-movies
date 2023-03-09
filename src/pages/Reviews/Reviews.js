@@ -20,7 +20,7 @@ export const Reviews= () => {
                {filmReviews &&
                 (filmReviews.total_results === 0 ? 
                 <p>We don't have any reviews for this movie</p> :
-                <ReviewsCard reviews={filmReviews } />)
+                <ReviewsCard reviews={filmReviews.results } />)
             }
           </div>
         )

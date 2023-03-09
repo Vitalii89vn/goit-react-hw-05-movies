@@ -21,7 +21,7 @@ export const Cast = () => {
             {filmCast &&
                 (filmCast.cast.length === 0 ?
                 <p>We don't have any info about actors for this movie</p> :
-                <CastCard filmCast={filmCast} />
+                <CastCard filmCast={filmCast.cast} />
             )}
         </div>
     )

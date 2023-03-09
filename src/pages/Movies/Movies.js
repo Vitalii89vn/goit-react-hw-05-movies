@@ -23,10 +23,9 @@ export const Movies = () => {
         FetchTMDB.searchMovies(currQuery)
             .then(m => {
                 if (m.total_results !== 0) {
-                    console.log(m);
                     setMovies(m);
                     setSearchParams({ query: currQuery });
-                } else { toast.error('This is an error!') };
+                } else { toast.error(`We are not found movies with name ${currQuery}!`) };
             })
         .catch(() => toast('OOPS'))
         .finally(() => setLoading(false))
