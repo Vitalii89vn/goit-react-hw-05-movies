@@ -1,10 +1,10 @@
 import { useState, useEffect} from "react";
 import * as FetchTMDB from "utils/FetchTMDB";
 import { useParams } from 'react-router-dom';
-import { toast } from "react-hot-toast";
+import  toast  from "react-hot-toast";
 import { ReviewsCard } from "components/ReviewsCard/ReviewsCard";
 
-export const Reviews= () => {
+export const Reviews = () => {
     const [filmReviews, setFilmReviews] = useState(null)
 
     const { id } = useParams();
@@ -17,11 +17,12 @@ export const Reviews= () => {
     
     return (
         <div>
-               {filmReviews &&
-                (filmReviews.total_results === 0 ? 
-                <p>We don't have any reviews for this movie</p> :
-                <ReviewsCard reviews={filmReviews.results } />)
+            {filmReviews &&
+                (filmReviews.total_results === 0 ?
+                    <p>We don't have any reviews for this movie</p> :
+                    <ReviewsCard reviews={filmReviews.results} />)
             }
-          </div>
-        )
-}
+        </div>
+    )
+};
+export default Reviews;

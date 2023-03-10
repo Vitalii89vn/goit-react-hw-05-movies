@@ -6,7 +6,7 @@ import { toast } from "react-hot-toast";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { Layout } from "components/Layout/Layout";
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
     const [movie, setMovie] = useState(null)
     const location = useLocation();
     const { id } = useParams();
@@ -24,4 +24,5 @@ export const MovieDetails = () => {
             {movie && (<FilmCard film={movie} />)}
         </>
     )
-}
+};
+export default MovieDetails

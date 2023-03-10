@@ -1,13 +1,10 @@
-import { Link } from "react-router-dom";
+import { LayoutLink} from "../Layout/Layout.styled";
 
 export const Layout = () => {
     return (
-         <nav>
-            <Link to="/">Home</Link>
-            <Link to="/movies">Movie</Link>
-       </nav>
+        <nav>
+            <LayoutLink to="/">Home</LayoutLink>
+            <LayoutLink to="/movies">Movie</LayoutLink>
+        </nav>
     )
-       
-    
-    
 }
