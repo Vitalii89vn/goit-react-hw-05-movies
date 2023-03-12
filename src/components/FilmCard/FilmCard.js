@@ -18,7 +18,7 @@ export const FilmCard = ({ film }) => {
                 <h2>Overview</h2>
                 <p>{overview}</p>
                 <h2>Genres</h2>
-                <p>{genres.map(({ id, name }) => (<li key={id}>{name}</li>))}</p>
+                <p>{genres.map(({ id, name }) => (<li key={id}><span>{name}</span></li>))}</p>
             </div>
             <p>Additional information</p>
             <div>

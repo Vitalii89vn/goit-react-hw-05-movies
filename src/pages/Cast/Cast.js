@@ -1,7 +1,6 @@
 import { useState, useEffect} from "react";
 import * as FetchTMDB from "utils/FetchTMDB";
-import { useParams,  } from 'react-router-dom';
-import  toast  from "react-hot-toast";
+import { useParams  } from 'react-router-dom';
 import { CastCard } from "components/CastCard/CastCard";
 
 const Cast = () => {
@@ -12,7 +11,6 @@ const Cast = () => {
     useEffect(() => {
         FetchTMDB.getCastFromMovie(id)
             .then(setFilmCast)
-            .catch(toast.error('Oops, something wrong'))
     }, [id])
 
     return (

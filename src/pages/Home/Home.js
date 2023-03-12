@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import * as FetchTMDB from "utils/FetchTMDB";
 import { TrendingMovies } from "components/TrendingMovies/TrendingMovies";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import { Layout } from "components/Layout/Layout";
 import { Outlet } from "react-router-dom";
 
@@ -22,6 +22,7 @@ const Home = () => {
         <div>
             <Layout />
             < TrendingMovies movies={trendingMovies} />
+            <Toaster/>
             <Outlet />
         </div>
      

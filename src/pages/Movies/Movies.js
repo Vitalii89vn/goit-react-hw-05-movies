@@ -3,7 +3,7 @@ import { SearchBar } from "components/Searchbar/Searchbar";
 import { Outlet, useSearchParams  } from "react-router-dom";
 import { useState, useEffect } from "react";
 import * as FetchTMDB from "utils/FetchTMDB";
-import toast from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 import { MoviesList } from "components/MoviesList/MoviesList";
 import { Loader } from "components/Loader/Loader";
 
@@ -41,7 +41,7 @@ const Movies = () => {
             {<SearchBar onSubmit={handleFormSubmit} />}
             {movies && <MoviesList films={movies.results} />}
             {loading && <Loader />}
-          
+            <Toaster/>
             <Outlet />
         </div>
     )

@@ -3,14 +3,14 @@ import '../../default_photos/default_cast.jpeg';
 import default_cast from '../../default_photos/default_cast.jpeg';
 
 export const CastCard = ({ filmCast }) => {
-    const profile = `https://www.themoviedb.org/t/p/original`;
+    const profileURL = `https://www.themoviedb.org/t/p/original`;
       
     return (
         <>
             {filmCast.map(({ cast_id, name, character, profile_path }) => (
                 <li key={cast_id}>
                     {profile_path ?
-                        <img src={`${profile}${profile_path}`} alt={name} width='40' /> :
+                        <img src={`${profileURL}${profile_path}`} alt={name} width='40' /> :
                         <img src={default_cast} alt="default_cast" width='40' />}
                     <p>{name}</p>
                     <p>Character: {character}</p>

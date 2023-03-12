@@ -1,7 +1,6 @@
 import { useState, useEffect} from "react";
 import * as FetchTMDB from "utils/FetchTMDB";
 import { useParams } from 'react-router-dom';
-import  toast  from "react-hot-toast";
 import { ReviewsCard } from "components/ReviewsCard/ReviewsCard";
 
 export const Reviews = () => {
@@ -12,7 +11,6 @@ export const Reviews = () => {
     useEffect(() => {
         FetchTMDB.getReviewsFromMovie(id)
             .then(setFilmReviews)
-            .catch(toast.error('Oops, something wrong'))
     }, [id])
     
     return (
